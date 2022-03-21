@@ -15,12 +15,12 @@ const Navigator = createStackNavigator(
     MealDetail: MealDetailScreen,
   },
   {
+    mode: "modal",
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Platform.OS === "android" ? Colors.primary : "",
       },
       headerTintColor: Platform.OS === "android" ? "white" : Colors.primary,
-      
     },
   }
 );
