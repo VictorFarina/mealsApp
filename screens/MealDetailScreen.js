@@ -1,16 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 import React from "react";
 
-const MealDetailScreen = () => {
+const MealDetailScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>MealDetailScreen</Text>
-      <Button
-        title='Back to categories'
-        onPress={() => {
-          props.navigation.push("CategoryMeals");
-        }}
-      />
+      <Text>MealDetailScreen</Text> 
+      <Button title="Go back to Categories" onPress={()=>{
+        props.navigation.popToTop();
+      }}/> 
+
     </View>
   );
 };

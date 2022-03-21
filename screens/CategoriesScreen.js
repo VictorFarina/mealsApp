@@ -1,15 +1,7 @@
-import {
-  StyleSheet,
-  FlatList,
-  Text,
-  View,
-  Button,
-  TouchableOpacity,
-  Platform
-} from "react-native";
+import { StyleSheet, FlatList, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { CATEGORIES } from "../data/dummy-data";
-import Colors from "../constants/Colors";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
@@ -18,9 +10,9 @@ const CategoriesScreen = (props) => {
         onPress={() => {
           props.navigation.navigate({
             routeName: "CategoryMeals",
-            params:{
-                categoryId: itemData.item.id
-            }
+            params: {
+              categoryId: itemData.item.id,
+            },
           });
         }}
         style={styles.gridItem}>
@@ -36,10 +28,6 @@ const CategoriesScreen = (props) => {
 
 CategoriesScreen.navigationOptions = {
   headerTitle: "Meal Categories",
-  headerStyle:{
-    backgroundColor:Platform.OS==='android' ? Colors.primary : Colors.primary
-  },
-  headerTintColor:Platform.OS==='android' ? 'white' : 'white'
 };
 
 export default CategoriesScreen;
@@ -52,15 +40,16 @@ const styles = StyleSheet.create({
   },
 
   gridItem: {
+    backgroundColor: Colors.primary,
     borderRadius: 10,
     flex: 1,
     borderWidth: 1,
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 10,
+    marginVertical: 5,
     marginHorizontal: 5,
     width: 50,
-    height: 50,
+    height: 100,
     shadowColor: "#000000",
   },
 });
