@@ -8,6 +8,7 @@ const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
     return (
       <CategoryGrid
+        style={styles.screen}
         title={itemData.item.title}
         color={itemData.item.color}
         onSelect={() => {
@@ -35,7 +36,6 @@ export default CategoriesScreen;
 
 const styles = StyleSheet.create({
   screen: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },

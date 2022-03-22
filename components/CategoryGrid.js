@@ -15,9 +15,13 @@ const CategoryGrid = (props) => {
     TouchbleCmp = TouchableNativeFeedback;
   }
 
+
   return (
-    <TouchbleCmp onPress={props.onSelect} style={{ ...styles.container, ...{ backgroundColor: props.color }}}>
+    <TouchbleCmp
+      onPress={props.onSelect}>
+      <View style={{...styles.container,...{backgroundColor:props.color}}}>
         <Text style={styles.title}>{props.title}</Text>
+      </View>
     </TouchbleCmp>
   );
 };
@@ -26,17 +30,15 @@ export default CategoryGrid;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
     borderRadius: 10,
     flex: 1,
+    width: 180,
     height: 200,
     alignItems: "center",
     justifyContent: "center",
     marginVertical: 5,
     marginHorizontal: 5,
   },
-
- 
 
   title: {
     fontSize: 22,
