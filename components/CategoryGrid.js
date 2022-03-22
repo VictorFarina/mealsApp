@@ -15,11 +15,10 @@ const CategoryGrid = (props) => {
     TouchbleCmp = TouchableNativeFeedback;
   }
 
-
   return (
-    <TouchbleCmp
-      onPress={props.onSelect}>
-      <View style={{...styles.container,...{backgroundColor:props.color}}}>
+    <TouchbleCmp onPress={props.onSelect}>
+      <View
+        style={{ ...styles.container, ...{ backgroundColor: props.color } }}>
         <Text style={styles.title}>{props.title}</Text>
       </View>
     </TouchbleCmp>
