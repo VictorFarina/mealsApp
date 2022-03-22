@@ -1,16 +1,26 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import React from "react";
 
 const MealItem = (props) => {
+  console.log(props);
   return (
     <View style={styles.mealItem}>
       <TouchableOpacity onPress={props.onSelectMeal}>
         <View>
           <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
+            <ImageBackground source={{ uri: props.image }} style={styles.bgImage} />
             <Text>{props.title}</Text>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetails }}>
             <Text>{props.duration}m</Text>
+            <Text>{props.complexity}</Text>
+            <Text>{props.affordability}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -35,5 +45,12 @@ const styles = StyleSheet.create({
     height: "90%",
   },
 
-  mealDetails: {},
+  mealDetails: {
+    paddingHorizontal: 10,
+    justifyContent: "space-between",
+  },
+  bgImage: {
+    width: "100%",
+    height: "100%",
+  },
 });
