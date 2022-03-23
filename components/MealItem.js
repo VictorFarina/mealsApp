@@ -8,19 +8,24 @@ import {
 import React from "react";
 
 const MealItem = (props) => {
-  console.log(props);
+
   return (
     <View style={styles.mealItem}>
-      <TouchableOpacity onPress={props.onSelectMeal}>
+      <TouchableOpacity onPress={props.onSelect}>
         <View>
           <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
-            <ImageBackground source={{ uri: props.image }} style={styles.bgImage} />
-            <Text>{props.title}</Text>
+            <ImageBackground
+              source={{ uri: props.image }}
+              style={styles.bgImage}>
+              <View style={styles.titleContainer}>
+                <Text style={styles.title}>{props.title}</Text>
+              </View>
+            </ImageBackground>
           </View>
           <View style={{ ...styles.mealRow, ...styles.mealDetails }}>
             <Text>{props.duration}m</Text>
-            <Text>{props.complexity}</Text>
-            <Text>{props.affordability}</Text>
+            <Text>{props.complexity.toUpperCase()}</Text>
+            <Text>{props.affordability.toUpperCase()}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -35,22 +40,36 @@ const styles = StyleSheet.create({
     width: " 100%",
     height: 200,
     width: "100%",
-    backgroundColor: "#ccc",
+    backgroundColor: "#f5f5f5",
+    borderRadius: 10,
   },
 
   mealRow: {
     flexDirection: "row",
   },
   mealHeader: {
-    height: "90%",
+    height: "85%",
   },
 
   mealDetails: {
     paddingHorizontal: 10,
     justifyContent: "space-between",
+    alignItems: "center",
+    height: "15%",
   },
   bgImage: {
     width: "100%",
     height: "100%",
+  },
+
+  titleContainer: {
+    backgroundColor: "rgba(0,0,0,0.7)",
+  },
+
+  title: {
+    fontFamily: "open-sans-bold",
+    fontSize: 22,
+    color: "white",
+    backgroundColor: "rgba(0,0,0,0.7)",
   },
 });
