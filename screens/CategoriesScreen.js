@@ -34,7 +34,13 @@ CategoriesScreen.navigationOptions = (navData) => {
     headerTitle: "Meal Categories",
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title='menu' iconName='ios-menu' onPress={() => {}} />
+        <Item
+          title='menu'
+          iconName='ios-menu'
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
       </HeaderButtons>
     ),
   };

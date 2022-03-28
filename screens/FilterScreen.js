@@ -9,13 +9,9 @@ const FilterScreen = (props) => {
   );
 };
 
-FilterScreen.navigationOptions={
-  headerTitle:'Filter Meals'
-
-}
-
-
-
+FilterScreen.navigationOptions = {
+  headerTitle: "Filter Meals",
+};
 
 export default FilterScreen;
 
